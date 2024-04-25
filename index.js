@@ -13,14 +13,14 @@ const indexroute = require("./routes/indexrouter");
 const homepagecontroller = require("./controllers/homecontroller");
 const usercontroller = require("./controllers/usercontroller");
 
-mongoose.connect("mongodb://localhost:27017/", { useNewUrlParser: true });
-mongoose.connection.once("open", (error) => {
-  if (error) {
-    console.log("connecting error with database");
-  } else {
-    console.log("connection was successful");
-  }
-});
+// mongoose.connect("mongodb://35.173.130.222:27017/", { useNewUrlParser: true });
+// mongoose.connection.once("open", (error) => {
+//   if (error) {
+//     console.log("connecting error with database");
+//   } else {
+//     console.log("connection was successful");
+//   }
+// });
 
 app.use(
   methodOverride("_method", {
@@ -52,7 +52,7 @@ app.use(router);
 
 router.use("/", indexroute);
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 5000);
 
 app.listen(app.get("port"), () => {
   console.log(`server running on ${app.get("port")}`);
